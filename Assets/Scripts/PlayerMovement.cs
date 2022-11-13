@@ -8,6 +8,8 @@ public class PlayerMovement : MonoBehaviour
     public CharacterController2D characterController;
     public PlayerAnimationController playerAnimationController;
 
+    public bool disableInput = false;
+
     public float runSpeed = 40f;
 
     float horizontalMove = 0f;
@@ -15,6 +17,8 @@ public class PlayerMovement : MonoBehaviour
 
     void Update()
     {
+        if (disableInput) return;
+
         horizontalMove = Input.GetAxisRaw("Horizontal") * runSpeed;
 
         if (Input.GetButtonDown("Jump"))

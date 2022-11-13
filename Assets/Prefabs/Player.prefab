@@ -145,7 +145,7 @@ MonoBehaviour:
   fixDrawOrder: 0
   addNormals: 0
   calculateTangents: 0
-  maskInteraction: 0
+  maskInteraction: 1
   maskMaterials:
     materialsMaskDisabled: []
     materialsInsideMask: []
@@ -257,6 +257,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   characterController: {fileID: 8352273570050698683}
   playerAnimationController: {fileID: 3632148603936345445}
+  disableInput: 1
   runSpeed: 30
 --- !u!114 &8301114666711102243
 MonoBehaviour:
