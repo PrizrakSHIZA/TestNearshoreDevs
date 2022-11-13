@@ -29,14 +29,14 @@ public class PlayerMovement : MonoBehaviour
 
     public void AttackSword()
     {
-        // some delay logic, if it should be
+        // some delay logic, if its needed
         playerAnimationController.SwordAttack();
         // Some attack logic here
     }
 
     public void AttackBow()
     {
-        // some delay logic, if it should be
+        // some delay logic, if its needed
         playerAnimationController.BowAttack();
         // Some attack logic here
     }
