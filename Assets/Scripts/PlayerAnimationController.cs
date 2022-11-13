@@ -19,12 +19,23 @@ public class PlayerAnimationController : MonoBehaviour
     public Spine.AnimationState spineAnimation;
     public Spine.Skeleton skeleton;
 
+    //only for speed change
+    public EntityState playerState;
+    public PlayerMovement pm;
+
     bool jump = false;
 
     private void Start()
     {
         skeletonAnimation = GetComponent<SkeletonAnimation>();
         spineAnimation = skeletonAnimation.AnimationState;
+    }
+
+    private void Update()
+    {
+        //Just thought if joystick could return not only -1 0 1 we could use it. Or given value could be forced to 1 or -1.
+        if(playerState.CurrentState == States.running)
+            spineAnimation.GetCurrent(0).TimeScale = Mathf.Abs(pm.InputMovement);
     }
 
     public void ChangeAnimation(States toState)

@@ -23,9 +23,9 @@ public class EntityState : MonoBehaviour
     private void Update()
     {
         //idle + waliking
-        if (Mathf.Abs(rb.velocity.x) > 1 && cc.Grounded)
+        if (Mathf.Abs(rb.velocity.x) > .1f && cc.Grounded)
             ChangeState(States.running);
-        else if (Mathf.Abs(rb.velocity.x) < 1 && cc.Grounded)
+        else if (Mathf.Abs(rb.velocity.x) < .1f && cc.Grounded)
             ChangeState(States.idle);
         // jump and air
         // This will execute Jump_start animation even if character will be launched upward for external forces (not only jump)
