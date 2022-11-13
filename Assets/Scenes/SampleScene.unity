@@ -3053,6 +3053,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 139980681}
     - target: {fileID: 3632148603936345445, guid: c632339d5ec5e6a438faa4f9bd05126f, type: 3}
+      propertyPath: blink
+      value: Idle_02_blink
+      objectReference: {fileID: 0}
+    - target: {fileID: 3632148603936345445, guid: c632339d5ec5e6a438faa4f9bd05126f, type: 3}
       propertyPath: playerState
       value: 
       objectReference: {fileID: 139980680}
@@ -3083,7 +3087,7 @@ PrefabInstance:
     - target: {fileID: 5885693315762417145, guid: c632339d5ec5e6a438faa4f9bd05126f, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
-      objectReference: {fileID: 2100000, guid: acf29dac6164b0d44abece420ea5e0b4, type: 2}
+      objectReference: {fileID: 2100000, guid: cdf51ba52a9214741959f70c23439ddf, type: 2}
     - target: {fileID: 5885693315762417150, guid: c632339d5ec5e6a438faa4f9bd05126f, type: 3}
       propertyPath: m_Mesh
       value: 

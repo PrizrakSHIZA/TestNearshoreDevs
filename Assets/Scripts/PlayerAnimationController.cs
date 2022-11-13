@@ -7,6 +7,7 @@ public class PlayerAnimationController : MonoBehaviour
     #region Animations
     [Header("Animations")]
     [SpineAnimation, SerializeField] string idle;
+    [SpineAnimation, SerializeField] string blink;
     [SpineAnimation, SerializeField] string running;
     [SpineAnimation, SerializeField] string startJump;
     [SpineAnimation, SerializeField] string falling;
@@ -24,6 +25,8 @@ public class PlayerAnimationController : MonoBehaviour
     public PlayerMovement pm;
 
     bool jump = false;
+    float blinkTimer = 3;
+    float elapsed = 0f;
 
     private void Start()
     {
@@ -36,6 +39,20 @@ public class PlayerAnimationController : MonoBehaviour
         //Just thought if joystick could return not only -1 0 1 we could use it. Or given value could be forced to 1 or -1.
         if(playerState.CurrentState == States.running)
             spineAnimation.GetCurrent(0).TimeScale = Mathf.Abs(pm.InputMovement);
+
+        //Blink
+        if (playerState.CurrentState == States.idle)
+        {
+            elapsed += Time.deltaTime;
+            if (elapsed >= blinkTimer)
+            {
+                elapsed = 0f;
+                spineAnimation.AddAnimation(0, blink, false, 0);
+                spineAnimation.AddAnimation(0, idle, true, 0);
+            }
+        }
+        else
+            elapsed = 0f;
     }
 
     public void ChangeAnimation(States toState)
